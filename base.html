@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>grupobriones</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+   <header class="hero">
+    <!-- Navegación superior -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="inline-logo-white.avif" alt="Logo"> 
+           
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido Central -->
+    <div class="hero-content">
+        <h1>INVERSIONES <br> <span>INMOBILIARIAS</span></h1>
+        
+        <!-- Barra de contacto translúcida -->
+        <div class="contact-bar">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i> Cerrito 1186, CABA
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-globe"></i> © 2026 Grupo Briones
+            </div>
+        </div>
+    </div>
+</header>
+
+ <section class="seccion-empresa">
+    <div class="contenedor-grid">
+        <!-- Columna de Imágenes -->
+        <div class="imagenes-layout">
+            <div class="imagen-principal">
+                <img src="edificio.avif" alt="Edificio principal">
+            </div>
+            <div class="imagen-secundaria">
+                <img src="sorasak-KxCJXXGsv9I-unsplash.jpg" alt="Detalle edificio">
+            </div>
+        </div>
+
+        <!-- Columna de Texto -->
+        <div class="contenido-texto">
+            <h1>Tu próximo departamento <br> en CABA desde <br> USD 100.000</h1>
+            <p>Entre Beltrán e Iván Briones, llevan más de 1000 departamentos entregados en CABA.
+
+Somos especialistas en construir edificios de calidad.Somos especialistas en construir edificios de calidad.</p>
+            <p>Nuestro staff de ventas te ayudará a encontrar lo que mejor se adapte a tu necesidad de vivienda, o inversión.</p>
+        <div class="formulario-contacto">
+    <form>
+        <input type="text" placeholder="Nombre completo">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Teléfono">
+        <button type="submit" class="btn-info">Quiero más información</button>
+    </form>
+</div>
+        </div>
+    </div>
+</section>
+
+</body>
+
+<script>
+    // Detectamos si es un dispositivo móvil o táctil
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    if (!isTouchDevice) {
+        // --- SOLO PARA PC (Scroll Suave) ---
+        let scrollPos = window.scrollY;
+        let targetPos = window.scrollY;
+        const speed = 0.08; // Ajustá este valor (0.05 a 0.1) para la suavidad
+
+        function smoothScroll() {
+            scrollPos += (targetPos - scrollPos) * speed;
+            window.scrollTo(0, scrollPos);
+            requestAnimationFrame(smoothScroll);
+        }
+
+        window.addEventListener('wheel', (e) => {
+            e.preventDefault(); 
+            targetPos += e.deltaY;
+            targetPos = Math.max(0, Math.min(targetPos, document.documentElement.scrollHeight - window.innerHeight));
+        }, { passive: false });
+
+        smoothScroll();
+    } else {
+        // --- PARA CELULARES (Scroll Nativo) ---
+        // No hacemos nada, dejamos que el dedo mueva la página normal
+        document.documentElement.style.overflow = "auto";
+        document.body.style.overflow = "auto";
+    }
+</script>
+
+</html>
